@@ -8,8 +8,28 @@ const assert = require('assert')
  * HINT 2: Get the truthiness of a value by using a double bang (!!),
  *    or the untruthiness using a single bang (!)
  */
-
-const hasFalsyValue = obj => {
+ 
+const hasFalsyValue = (obj) => {
+  let objs;
+  let current = false;
+  Object.values(obj).forEach(function(e) {
+    if(typeof(e) === 'object')
+    {
+      objs = hasFalsyValue(e);
+    }
+    else 
+    {
+      if (!e)
+      {
+        current = true;
+      }
+    }
+  })
+  if(objs)
+  {
+    return true;
+  }
+  return current;
 };
 
 const falsyObj = {

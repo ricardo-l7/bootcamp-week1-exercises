@@ -101,24 +101,47 @@ dont hard code solutions. */
 
 // Implement the function usersByPet to return a list of user objects filtered by cat or dog.
 const usersByPet = pet => {
-}
+  const petOwners = database.users.filter(value => value.favPet === pet);
+  return petOwners;
+};
 console.log(usersByPet('dog'))
 console.log(usersByPet('cat'))
 
 // Implement the function collegeLookup to return the name and color of a user's college.
 const collegeLookup = user => {
+  const collegeID = database.users.filter(value => value.firstName === user)[0].collegeId;
+  const colCol = database.college.filter(value => value.id === collegeID);
+  const college = colCol.map(school => `${school.name} ${school.color}`);
+  return college;
 }
 console.log(collegeLookup('Charles'))
 console.log(collegeLookup('Daniela'))
 
 // define oppositesAttract as a list of friend objects whose favorite pets are different.
-const oppositesAttract = _______
+const oppositesAttract = database.friends.filter(function(element) { 
+  id1 = element.id1;
+  id2 = element.id2;
+  favPet1 = database.users.filter(value1 => value1.id === id1)[0].favPet;
+  favPet2 = database.users.filter(value1 => value1.id === id2)[0].favPet;
+  return (favPet1 !== favPet2);
+})
 console.log(oppositesAttract)
 
 // define local as a list of users who live in the same state as they go to school.
-const local = _______
+const local = database.users.filter(function(element) {
+  livState = element.state;
+  colID = element.collegeId;
+  colState = database.college.filter(value => value.id=== colID)[0].state;
+  return (livState === colState);
+});
 console.log(local)
 
 // define collegeFriends as a list of friend objects that go to the same college
-const collegeFriends = _______
+const collegeFriends = database.friends.filter(function(element) {
+  id1 = element.id1;
+  id2 = element.id2;
+  colID1 = database.users.filter(value1 => value1.id === id1)[0].collegeId;
+  colID2 = database.users.filter(value1 => value1.id === id2)[0].collegeId;
+  return (colID1 === colID2);
+});
 console.log(collegeFriends)
