@@ -1,0 +1,169 @@
+body {
+  margin:0;
+}
+
+.masthead {
+  flex-wrap: wrap;
+  background-color: black;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.headshot {
+  height: 10vh;
+  width: 6vw;
+}
+
+.links {
+  box-sizing: border-box;
+  display: flex;
+  position: left;
+  list-style-type: none;
+  margin-top:22px;
+  padding:0;
+}
+
+.spec {
+  margin: 0;
+}
+
+.navbar {
+  color: #ecf0f1;
+  text-decoration: none;
+  margin-right: 15vw;
+  font-family: fantasy;
+  font-size: x-large;
+}
+ 
+.navbar:hover{
+  color: #0088a9;
+}
+
+.home {
+  background-color: #ecf0f1;
+}
+
+p {
+  color: #8e3ecf;
+}
+
+.ind {
+  display: inline-block;
+  padding: 2vw;
+  border: solid #0088a9 5px;
+  width: 20%;
+  margin-left: 15vw;
+  margin-top: 12vh;
+  margin-right: 20vw;
+  border-radius: 25px;
+}
+
+.meme {
+  height: 30vw;
+}
+
+.box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.lists {
+  border: solid #0088a9 5px;
+  background-color: black;
+  padding: 2vw;
+  color: #8e3ecf;
+  width: 25vw;
+}
+
+.numitem {
+  color: #8e3ecf;
+  text-decoration: none;
+  margin:0;
+}
+
+.numitem:hover {
+  color:#ecf0f1 ;
+ }
+
+.row{
+  margin: 5px;
+}
+
+.row:hover {
+  color:#ecf0f1 ;
+
+}
+
+.icon {
+  width: 15vw;
+  margin-right: 7vw;
+  margin-left: 7vw;
+}
+
+.footer {
+  flex-wrap: wrap;
+  background-color: black;
+  margin-bottom: 0;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  position:fixed;
+  left:0px;
+  bottom:0px;
+  width: 100%;
+  height: 2vh;
+}
+
+.footicon {
+  block-size: 16px;
+  margin-left: 5px;
+}
+
+
+.aboutme {
+  border: solid #0088a9 5px;
+  color: #8e3ecf;
+  border-radius: 25px;
+  padding: 7px;
+  width: 25vw;
+  margin-right: 15vw;
+  margin-top: 2vh;
+}
+
+.fam {
+  border: solid #0088a9 5px;
+  color: #8e3ecf;
+  border-radius: 25px;
+  padding: 7px;
+  width: 25vw;
+  height: fit-content; 
+  margin-top: 20vh;
+  margin-left: 10vw;
+}
+
+th, td {
+  border:3px solid #0088a9;
+}
+
+table {
+  border:3px solid black;
+  width: 40vw;
+  margin-right: 10vw;
+  margin-top: 20vh;
+}
+
+.liftpara {
+  border: solid #0088a9 5px;
+  color: #8e3ecf;
+  border-radius: 25px;
+  padding: 10px;
+  width: 25vw;
+  height: 40vh;
+  margin-top: 10vh;
+  margin-left: 10vw;
+}
