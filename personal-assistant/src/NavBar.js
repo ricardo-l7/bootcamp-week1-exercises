@@ -1,9 +1,12 @@
 import React from 'react'
-import { MastHead } from './styles';
+import { MastHead, Page } from './styles';
 
 const NavBar = () => {
     return ( 
-        <MastHead>Nothing To Do</MastHead>
+        <MastHead>
+            <Page to='/todos'> To Do List</Page>
+            <Page to='/weather'> Current Weather </Page>
+        </MastHead>
     )
 }
 

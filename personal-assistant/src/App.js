@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 //components
 import Header from "./ListHeader";
 import NoListHeader from './NoListHeader';
@@ -7,6 +8,7 @@ import ToDoForm from './ToDoForm';
 import SearchForm from './SearchForm';
 import NavBar from './NavBar';
 import data from './data.json'
+import Temp from './Weather';
 //styles
 import { Container, Main } from './styles'
 
@@ -60,30 +62,48 @@ function App() {
     if(toDoList.length === 0) {
       return (
         <div className="App">
-          <Main>
-            <NavBar/>
-            <Container>
-              <ToDoForm addTask={addTask}/>
-              <SearchForm searchTask={searchTask}/>
-            </Container>
-            <center><NoListHeader/></center>
-            <ToDoList toDoList={toDoList} handleToggle={handleToggleAdd} handleFilter={handleFilterAdd}/>
-          </Main>
+          <BrowserRouter basename='/personal-assistant'>
+            <Main>
+              <NavBar/>
+              <Switch>
+                <Route path='/todos'>
+                  <Container>
+                    <ToDoForm addTask={addTask}/>
+                    <SearchForm searchTask={searchTask}/>
+                  </Container>
+                  <center><NoListHeader/></center>
+                  <ToDoList toDoList={toDoList} handleToggle={handleToggleAdd} handleFilter={handleFilterAdd}/>`
+                </Route>
+                <Route path='/weather'>
+                  <Temp/>
+                </Route>
+              </Switch>
+            </Main>
+          </BrowserRouter>
         </div>
       );
     }
     else {
       return (
         <div className="App">
-          <Main>
-            <NavBar/>
-            <Container>
-              <ToDoForm addTask={addTask}/>
-              <SearchForm searchTask={searchTask}/>
-            </Container>
-            <center><Header/></center>
-            <ToDoList toDoList={toDoList} handleToggle={handleToggleAdd} handleFilter={handleFilterAdd}/>
-          </Main>
+          <BrowserRouter basename='personal-assistant'>
+            <Main>
+              <NavBar/>
+              <Switch>
+                <Route path='/todos'>
+                  <Container>
+                    <ToDoForm addTask={addTask}/>
+                    <SearchForm searchTask={searchTask}/>
+                  </Container>
+                  <center><Header/></center>
+                  <ToDoList toDoList={toDoList} handleToggle={handleToggleAdd} handleFilter={handleFilterAdd}/>
+                </Route>
+                <Route path='/weather'>
+                  <Temp/>
+                </Route>
+              </Switch>
+            </Main>
+          </BrowserRouter>
         </div>
       );
     }
@@ -92,15 +112,24 @@ function App() {
   else {
       return (
         <div className="App">
-          <Main>
-            <NavBar/>
-            <Container>
-              <ToDoForm addTask={addTask}/>
-              <SearchForm searchTask={searchTask}/>
-            </Container>
-            <center><Header/></center>
-            <ToDoList toDoList={searchList} handleToggle={handleToggleSearch} handleFilter={handleFilterSearch}/>
-          </Main>
+          <BrowserRouter basename='personal-assistant'>
+            <Main>
+              <NavBar/>
+              <Switch>
+                <Route path='/todos'>
+                  <Container>
+                    <ToDoForm addTask={addTask}/>
+                    <SearchForm searchTask={searchTask}/>
+                  </Container>
+                  <center><Header/></center>
+                  <ToDoList toDoList={searchList} handleToggle={handleToggleSearch} handleFilter={handleFilterSearch}/>
+                </Route>
+                <Route path='/weather'>
+                  <Temp/>
+                </Route>
+              </Switch>
+            </Main>
+          </BrowserRouter>
         </div>
       );
     }

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { NavLink as link } from 'react-router-dom'
 
 export const SubmitButton = styled.button`
   background: #787D33;
@@ -78,13 +79,17 @@ export const Main = styled.div`
 `;
 
 export const MastHead = styled.div`
-  flex-wrap: wrap;
   margin-left: 0;
   height: 3vh;
   background-color: #27285C;
   color: white;
   padding: 10px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+
+`
+export const Page = styled(link).attrs()`
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  margin-left: 5vw;
 `
